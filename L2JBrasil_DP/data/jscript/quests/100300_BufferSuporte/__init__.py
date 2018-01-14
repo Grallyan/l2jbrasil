@@ -83,6 +83,11 @@ class Quest (JQuest) :
 				SkillTable.getInstance().getInfo(1413,1).getEffects(st.getPlayer(),st.getPlayer())
 				return "100300-2.htm"			
 				st.setState(COMPLETED)
+                        #Cancel
+			if event == "5": 
+				st.getPlayer().stopAllEffects()
+				return "100300-3.htm"
+				st.setState(COMPLETED)
 
                 if st.getPlayer().getLevel() > 19 :
 			htmltext = "<html><head><body>Seu nivel e muito auto. Voce deve ter menos de 20.</body></html>"
@@ -142,12 +147,7 @@ class Quest (JQuest) :
 				return "100300-2.htm"			
 				st.setState(COMPLETED)
                         #Cancel
-			if event == "5" end st.getPlayer().getLevel() > 19: 
-				st.getPlayer().stopAllEffects()
-				return "100300-3.htm"
-				st.setState(COMPLETED)
-                        #Cancel
-			if event == "5" end st.getPlayer().getLevel() < 19: 
+			if event == "5": 
 				st.getPlayer().stopAllEffects()
 				return "100300-3.htm"
 				st.setState(COMPLETED)
